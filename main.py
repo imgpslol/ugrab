@@ -15,8 +15,8 @@
 import argparse
 import subprocess
 
+# Downloads the video or audio from the given URL using yt-dlp. (i think this is the best one but will look into alternatives too)
 def download(url, mode):
-    # Downloads the video or audio from the given URL using yt-dlp. (i think this is the best one but will look into alternatives too)
     command = ["yt-dlp"]
     
     if mode == "audio":
@@ -29,8 +29,8 @@ def download(url, mode):
     command.append(url)
     subprocess.run(command)
 
+# Parses command line arguments and starts the download
 def main():
-    # Parses command line arguments and starts the download
     parser = argparse.ArgumentParser(description="YouTube Video/Audio Downloader")
     parser.add_argument("url", help="YouTube video URL")
     parser.add_argument("-A", "--audio", action="store_true", help="Download as audio")
