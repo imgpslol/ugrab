@@ -4,19 +4,19 @@
 #!/usr/bin/env python3
 
 
-# Simple CLI tool to download YouTube videos or audio using yt-dlp.
+# Simple CLI tool to download YouTube videos or audio using yt-dlp
 # Usage:
 #   vgrab.py <url> -A   # Download audio
 #   vgrab.py <url> -V   # Download video
 #
-# Dependencies:
+# Dependencies: (TODO: add to README and write install / setup guide)
 #   - yt-dlp (install with: pip install yt-dlp)
 
 import argparse
 import subprocess
 
 def download(url, mode):
-    # Downloads the video or audio from the given URL using yt-dlp.
+    # Downloads the video or audio from the given URL using yt-dlp. (i think this is the best one but will look into alternatives too)
     command = ["yt-dlp"]
     
     if mode == "audio":
@@ -30,7 +30,7 @@ def download(url, mode):
     subprocess.run(command)
 
 def main():
-    # Parses command-line arguments and starts the download.
+    # Parses command line arguments and starts the download
     parser = argparse.ArgumentParser(description="YouTube Video/Audio Downloader")
     parser.add_argument("url", help="YouTube video URL")
     parser.add_argument("-A", "--audio", action="store_true", help="Download as audio")
